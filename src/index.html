@@ -6,41 +6,45 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1></h1>      
-    </header>
-    <nav></nav>
-    <main>
-      <section class="img">
 
-      </section>
+    <header>
+	  <h1></h1>   
+	  <nav></nav>   
+    </header>
+    
+    <main>
+	  <section class="img"></section>
+	  
       <section>
         <select>
             <option value="" disabled selected>CATEGORIAS</option>
             <option value="1">ATUALIZAÇÕES</option>
             <option value="2">EDIÇÕES ESPECIAIS</option>                
-        </select>
+		</select>
+		
         </select>
         <select name="Canais de Notícias">
             <option value="" disabled selected>CANAIS DE NOTICIAS</option>
             <option value="1">STEAM</option>
             <option value="2">TF2 BLOG</option>
             <option value="3">DIVERSOS</option>  
-          </select>
+		  </select>
+		  
           <select name="Data">
             <option value="" disabled selected>DATA</option>
             <option value="1">ESTA SEMANA</option>
             <option value="2">SEMANA PASSADA</option>
             <option value="3">MÊS PASSADO</option>   
-          </select>
-      </section>
-      <article> 
+		  </select>
+		  
+	  </section>
+	  
+      <article id="news-container" class="news-style"> 
 
       </article>
 
     </main>    
-    <script src="./data/steam/steam.js"></script>   
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+    <script type="text/javascript" src="./data/steam/steam.js"></script>   
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
