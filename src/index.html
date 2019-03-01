@@ -6,44 +6,31 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
     <header>
-	  <h1></h1>   
-	  <nav></nav>   
-    </header>
-    
+      <h1></h1>   
+      <nav></nav>   
+    </header>    
     <main>
-	  <section class="img"></section>
-	  
-      <section>
-
-        <select>
-            <option value="" disabled selected>CATEGORIAS</option>
-            <option value="1">ATUALIZAÇÕES</option>
-            <option value="2">EDIÇÕES ESPECIAIS</option>                
-		</select>
-		
-        <select name="Canais de Notícias">
-            <option value="" disabled selected>CANAIS DE NOTICIAS</option>
-            <option value="1">STEAM</option>
-            <option value="2">TF2 BLOG</option>
-            <option value="3">DIVERSOS</option>  
-		  </select>
-		  
-          <select name="Data">
-            <option value="" disabled selected>DATA</option>
-            <option value="1">ESTA SEMANA</option>
-            <option value="2">SEMANA PASSADA</option>
-            <option value="3">MÊS PASSADO</option>   
-		  </select>
-		  
-	  </section>
-	  
-      <article id="news-container" class="news-style"> </article>
-
-	</main>  
-	
-	
+      <section class="img"></section>	  
+        <section id="mainMenu">
+          <select id="newsChannels">
+              <option value="" disabled selected>CANAIS DE NOTICIAS</option>
+              <option value="steam_updates">STEAM</option>
+              <option value="tf2_blog">TF2 BLOG</option>
+              <option value="pcgamer">PC GAMER</option>              
+              <option value="eurogamer">EUROGAMER</option>
+              <option value="rps">RPS</option> 
+          </select>		  
+          <select id="data">
+              <option value="" disabled selected>DATA</option>
+              <option value="thisWeek">ESTA SEMANA</option>
+              <option value="lastWeek">SEMANA PASSADA</option>
+              <option value="lastMonth">MÊS PASSADO</option>   
+          </select>	
+          <p id="answer"></p>	  
+      </section>	  
+      <article id="news-container" class="news-style"></article>
+	  </main>  	
     <script type="text/javascript" src="./data/steam/steam.js"></script>   
     <script type="text/javascript" src="main.js"></script>
   </body>
