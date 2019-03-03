@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
   <body>
-
     <header>
 		<div class="logo-container"> 
 			<i class="fab fa-steam"></i>
@@ -22,16 +21,16 @@
 		</section>
 
 		<div class="wrap">
-			<section class="drop-list">
+			<section id="mainMenu" class="drop-list">
 				
-				<select>
-					<option value="" disabled selected>CATEGORIAS</option>
-					<option value="steam_updates">STEAM</option>
-					<option value="tf2_blog">TF2 BLOG</option> 
-					<option value="pcgamer">PCGAMER</option>
-					<option value="eurogamer">EUROGAMER</option>  
-					<option value="rps">RPS</option>              
-				</select>
+				<select id="newsChannels">
+                    <option value="" disabled selected>CANAIS DE NOTICIAS</option>
+                    <option value="steam_updates">STEAM</option>
+                    <option value="tf2_blog">TF2 BLOG</option>
+                    <option value="pcgamer">PC GAMER</option>              
+                    <option value="eurogamer">EUROGAMER</option>
+                    <option value="rps">RPS</option> 
+                </select>	
 				
 				
 				<select class="drop-list-date">
@@ -42,7 +41,8 @@
 					<option value="1540923360" class="drop-list-date">OCT 30 2018</option> 
 					<option value="1542738000" class="drop-list-date">NOV 20 2018</option> 
 				</select>
-						  
+                        
+                <p id="answer"></p>	
 			</section>
 					  
 			<article id="news-container" class="news-box">

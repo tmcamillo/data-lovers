@@ -22,6 +22,35 @@ const dateObj = getAllObj().map(word => word.date);
 console.log(dateObj);
 
 
+const newsChannels = document.querySelector('#newsChannels');
+newsChannels.addEventListener('change', filter); 
+
+function filter(){ 
+  let newsDiv = document.querySelector("#news-container");  
+  newsDiv.innerHTML='';
+  let channel = newsChannels.value;  
+  let filteringChannel = STEAM.appnews['newsitems'];  
+  for (let subjectMatter of filteringChannel){    
+    if(channel===subjectMatter.feedname){     
+      let title=subjectMatter.title
+      let date= new Date((subjectMatter.date)*1000).toDateString()
+      let contents=subjectMatter.contents
+      print( title, date, contents);
+    }
+  }
+} 
+
+function print(title, date, contents){
+  let newsDiv = document.querySelector("#news-container");     
+  let result = document.createElement('div') 
+  let template= `
+  <h2>${title}</h2>
+  <p>${date}</p>
+  <p>${contents}</p>      
+  ` 
+  result.innerHTML=template;     
+  newsDiv.appendChild(result)
+}
 let dropListDate = document.querySelector(".drop-list-date");
 dropListDate.addEventListener("change", loadByDate);
 
@@ -37,3 +66,4 @@ function loadByDate() {
         }
     }
 };
+
