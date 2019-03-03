@@ -1,0 +1,8 @@
+.DS_Store
+.thumbs.db
+.idea
+.vscode
+*.suo
+.ntvs
+*.njsproj
+*.sln
