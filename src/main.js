@@ -21,24 +21,29 @@ function displayAllNews(){
 const newsChannels = document.querySelector('#newsChannels');
 newsChannels.addEventListener('change', filter); 
 
-function filter(){
-  let newsDiv = document.querySelector("#news-container");
+function filter(){ 
+  let newsDiv = document.querySelector("#news-container");  
   newsDiv.innerHTML='';
-  let channel = newsChannels.value;
-  console.log('vamos ver', channel)
-  let seila = STEAM.appnews['newsitems'];
-  console.log(seila)
-  for (let assunto of seila){    
-    if(channel===assunto.feedname){ 
-     
-      let divalgumacoisa= document.createElement('div') 
-      let template= `
-      <p>${assunto.title}</p>
-      <p>${assunto.date}</p>
-      <p>${assunto.contents}</p>      
-      ` 
-      divalgumacoisa.innerHTML=template;     
-      newsDiv.appendChild(divalgumacoisa)    
+  let channel = newsChannels.value;  
+  let filteringChannel = STEAM.appnews['newsitems'];  
+  for (let subjectMatter of filteringChannel){    
+    if(channel===subjectMatter.feedname){     
+      let title=subjectMatter.title
+      let date= new Date((subjectMatter.date)*1000).toDateString()
+      let contents=subjectMatter.contents
+      print( title, date, contents);
     }
   }
 } 
+
+function print(title, date, contents){
+  let newsDiv = document.querySelector("#news-container");     
+  let result = document.createElement('div') 
+  let template= `
+  <h2>${title}</h2>
+  <p>${date}</p>
+  <p>${contents}</p>      
+  ` 
+  result.innerHTML=template;     
+  newsDiv.appendChild(result)
+}
