@@ -3,34 +3,55 @@
   <head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
   <body>
     <header>
-      <h1></h1>   
-      <nav></nav>   
-    </header>    
-    <main>
-      <section class="img"></section>	  
-        <section id="mainMenu">
-          <select id="newsChannels">
-              <option value="" disabled selected>CANAIS DE NOTICIAS</option>
-              <option value="steam_updates">STEAM</option>
-              <option value="tf2_blog">TF2 BLOG</option>
-              <option value="pcgamer">PC GAMER</option>              
-              <option value="eurogamer">EUROGAMER</option>
-              <option value="rps">RPS</option> 
-          </select>		  
-          <select id="data">
-              <option value="" disabled selected>DATA</option>
-              <option value="thisWeek">ESTA SEMANA</option>
-              <option value="lastWeek">SEMANA PASSADA</option>
-              <option value="lastMonth">MÊS PASSADO</option>   
-          </select>	
-          <p id="answer"></p>	  
-      </section>	  
-      <article id="news-container" class="news-style"></article>
-	  </main>  	
+		<div class="logo-container"> 
+			<i class="fab fa-steam"></i>
+		</div>
+		<nav></nav>  
+		
+    </header>
+    
+    <main >
+		<section class="banner">
+		
+		</section>
+
+		<div class="wrap">
+			<section id="mainMenu" class="drop-list">
+				
+				<select id="newsChannels">
+                    <option value="" disabled selected>CANAIS DE NOTICIAS</option>
+                    <option value="steam_updates">STEAM</option>
+                    <option value="tf2_blog">TF2 BLOG</option>
+                    <option value="pcgamer">PC GAMER</option>              
+                    <option value="eurogamer">EUROGAMER</option>
+                    <option value="rps">RPS</option> 
+                </select>	
+				
+				
+				<select class="drop-list-date">
+					<option value="" disabled selected>DATA ESPECÍFICA</option>
+					<option value="1540254060" class="drop-list-date">OCT 22 2018</option>
+					<option value="1540295862" class="drop-list-date">OCT 23 2018</option>
+					<option value="1540494720" class="drop-list-date">OCT 25 2018</option>   
+					<option value="1540923360" class="drop-list-date">OCT 30 2018</option> 
+					<option value="1542738000" class="drop-list-date">NOV 20 2018</option> 
+				</select>
+                        
+                <p id="answer"></p>	
+			</section>
+					  
+			<article id="news-container" class="news-box">
+				<div class="news-style"></div>
+			</article>
+		</div>
+	</main>  
+	
+	
     <script type="text/javascript" src="./data/steam/steam.js"></script>   
     <script type="text/javascript" src="main.js"></script>
   </body>
