@@ -1,28 +1,54 @@
 window.onload = function() {
-    displayAllNews();
+    displayNews(allNews);
+    feedDropListDates();
 };
 
-function getAllObj(){
-    return STEAM["appnews"]["newsitems"];  
+const allNews = STEAM["appnews"]["newsitems"]; 
+const newsDiv = document.querySelector("#news-container");
+const newsChannels = document.querySelector('#newsChannels');
+const dropListDate = document.querySelector(".drop-list-date");
+const uniqueDates = [...new Set(allNews.map(word => word.date))];
+
+let feedDropListDates = () => {
+    for (date of uniqueDates){
+        let option = document.createElement("option");
+        option.setAttribute("value", date);
+        option.setAttribute("class", "drop-option-date");
+        option.textContent = formatDate(date);
+        dropListDate.appendChild(option);
+    }
+};
+    
+let formatDate = (date) => {
+    return new Date(date*1000).toDateString();
 };
 
-function displayAllNews(){
-    let newsDiv = document.querySelector("#news-container");
-    newsDiv.innerHTML = `${getAllObj().map((materia) => `
+let displayNews = (filteredNews) => {
+    newsDiv.innerHTML = `${filteredNews.map((materia) => `
     <div class="news-style"> 
         <h2 class="news-title">${materia["title"]} </h2>
-        <h3 class="news-date">${new Date(materia["date"]*1000).toDateString()} </h3>
+        <h3 class="news-date">${formatDate(materia["date"])} </h3>
         <p class="news-text"> ${materia["contents"]} </p>
 	</div>
   `).join("")}
   `
 };
 
-const dateObj = getAllObj().map(word => word.date);
-console.log(dateObj);
+dropListDate.addEventListener("change", loadByDate);
 
+function loadByDate() {
+    let dateChosen = parseInt(dropListDate.value);
+    if (dateChosen){
+        let filteredNews = allNews.filter((materia) => {
+            return materia.date === dateChosen
+        });
+        displayNews(filteredNews);
+    }
+    else {
+        displayNews(allNews);
+    }
+};
 
-const newsChannels = document.querySelector('#newsChannels');
 newsChannels.addEventListener('change', filter); 
 
 function filter(){ 
@@ -40,30 +66,13 @@ function filter(){
   }
 } 
 
-function print(title, date, contents){
-  let newsDiv = document.querySelector("#news-container");     
-  let result = document.createElement('div') 
-  let template= `
-  <h2>${title}</h2>
-  <p>${date}</p>
-  <p>${contents}</p>      
-  ` 
-  result.innerHTML=template;     
-  newsDiv.appendChild(result)
+function print(title, date, contents){    
+    let result = document.createElement('div') 
+    let template= `
+    <h2>${title}</h2>
+    <p>${date}</p>
+    <p>${contents}</p>      
+    ` 
+    result.innerHTML=template;     
+    newsDiv.appendChild(result)
 }
-let dropListDate = document.querySelector(".drop-list-date");
-dropListDate.addEventListener("change", loadByDate);
-
-function loadByDate() {
-    let dateChosen = parseInt(dropListDate.value);
-    let newsDiv = document.querySelector(".news-style");
-    //console.log("escolhido", typeof(dateChosen));
-    for (data of dateObj) {
-        //console.log("iteraçao", typeof(data));
-        if (dateChosen === data){ 
-    //        console.log("chegou")
-
-        }
-    }
-};
-
