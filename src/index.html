@@ -26,24 +26,38 @@
 			<section id="mainMenu" class="drop-list">
 				
 				<select id="newsChannels">
-                    <option value="" disabled selected>CANAIS DE NOTICIAS</option>
-                    <option value="steam_updates">STEAM</option>
-                    <option value="tf2_blog">TF2 BLOG</option>
-                    <option value="pcgamer">PC GAMER</option>              
-                    <option value="eurogamer">EUROGAMER</option>
-                    <option value="rps">RPS</option> 
-                </select>	
+					<option value="" disabled selected>CANAIS DE NOTICIAS</option>
+					<option value="steam_updates">STEAM</option>
+					<option value="tf2_blog">TF2 BLOG</option>
+					<option value="pcgamer">PC GAMER</option>              
+					<option value="eurogamer">EUROGAMER</option>
+					<option value="rps">RPS</option> 
+        		</select>	
 				
 				
 				<select class="drop-list-date">
-					<option value="" selected>DATA ESPECÍFICA</option>
+					<option value="" >DATA ESPECÍFICA</option>
 				</select>
+
+				<!-- <input class="picker-date" type="date" max="2018-30-11" min="2018-01-10">
+				<input class="picker-date" type="date" max="2018-30-11" min="2018-01-10"> -->
                         
       		<p id="answer"></p>	
 			</section>
 					  
-			<article id="news-container" class="news-box">
-				<div class="news-style"></div>
+			<article class="news-box">
+				
+				<div>
+					<select class="sort-list">
+						<option value="" >ORDENAR</option>
+							<option value="oldest">MAIS ANTIGAS</option>
+							<option value="latest">MAIS RECENTES</option>
+						<!-- <option>A-Z</option>
+						<option>Z-A</option> -->
+					</select>
+				</div>
+				
+				<div id="news-container" class="news-style"></div>
 			</article>
 		</div>
 	</main>  
