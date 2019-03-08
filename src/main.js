@@ -29,7 +29,6 @@ let feedDropListDates = () => {
     }
 };
     
-
 let displayNews = (filteredNews) => {
     newsDiv.innerHTML = `${filteredNews.map((materia) => `
     <div class="news-style"> 
@@ -61,32 +60,14 @@ function loadByDate() {
 
 newsChannels.addEventListener('change', filter); 
 
-function filter(){ 
-  let newsDiv = document.querySelector("#news-container");  
-  newsDiv.innerHTML='';
-  let channel = newsChannels.value;  
-  let filteringChannel = STEAM.appnews['newsitems'];  
-  let agora = 1;
-  for (let subjectMatter of filteringChannel){ 
-    if(channel===subjectMatter.feedname){  
-      let isso=agora++;
-      let title=subjectMatter.title
-      let date= new Date((subjectMatter.date)*1000).toDateString()
-      let contents=subjectMatter.contents
-      print( title, date, contents);
-    }
-  }
-} 
-
-function print(title, date, contents){    
-    let result = document.createElement('div') 
-    let template= `
-    <h2>${title}</h2>
-    <p>${date}</p>
-    <p>${contents}</p>      
-    ` 
-    result.innerHTML=template;     
-    newsDiv.appendChild(result)
+function filter(){
+  let channel = newsChannels.value; 
+  if(channel){
+    let filteredNews = allNews.filter((materia) => {
+      return materia.feedname === channel
+  });
+    displayNews(filteredNews);
+  }  
 }
 
 sortList.addEventListener("change", sortedByDate);
@@ -102,6 +83,3 @@ function sortedByDate() {
 		displayNews(downward);
 	}
 };
-
-
-
