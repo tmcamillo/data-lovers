@@ -3,12 +3,20 @@ window.onload = function() {
     feedDropListDates();
 };
 
-const allNews = STEAM["appnews"]["newsitems"]; 
-const newsDiv = document.querySelector("#news-container");
+let formatDate = (date) => {
+	let newDate = new Date(date*1000);
+	let fixed = `${newDate.getFullYear()}-${newDate.getMonth() + 1 }-${newDate.getDate()}`;
+	return fixed;
+};
+
+let originalObj = STEAM["appnews"]["newsitems"]; 
+const allNews =  originalObj.map(item => {  return {...item, date2: formatDate(item.date)}  })
+const newsDiv = document.querySelector("#news-container");  
+const totalOfNews = document.querySelector(".total-sum-news");
 const newsChannels = document.querySelector('#newsChannels');
 const dropListDate = document.querySelector(".drop-list-date");
 const sortList = document.querySelector(".sort-list");
-const uniqueDates = [...new Set(allNews.map(word => word.date))];
+const uniqueDates = [...new Set(allNews.map(word => word.date2))];
 
 
 let feedDropListDates = () => {
@@ -16,16 +24,11 @@ let feedDropListDates = () => {
         let option = document.createElement("option");
         option.setAttribute("value", date);
         option.setAttribute("class", "drop-option-date");
-        option.textContent = formatDate(date);
+        option.textContent = date;
         dropListDate.appendChild(option);
     }
 };
     
-let formatDate = (date) => {
-	let newDate = new Date(date*1000);
-	let fixed = `${newDate.getFullYear()}-${newDate.getMonth() + 1 }-${newDate.getDate()} ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds() < 10 ? '0' + newDate.getSeconds(): newDate.getSeconds()}`;
-	return fixed;
-};
 
 let displayNews = (filteredNews) => {
     newsDiv.innerHTML = `${filteredNews.map((materia) => `
@@ -36,21 +39,24 @@ let displayNews = (filteredNews) => {
 	</div>
   `).join("")}
   `
-};
+    let sumFilteredNews = Object.keys(filteredNews).length;
+    totalOfNews.innerHTML = `<p>Foi encontrado um total de ${sumFilteredNews} notícias para seu filtro</p>`  
+}; 
 
 dropListDate.addEventListener("change", loadByDate);
 
 function loadByDate() {
-    let dateChosen = parseInt(dropListDate.value);
+    let dateChosen = dropListDate.value;
     if (dateChosen){
         let filteredNews = allNews.filter((materia) => {
-            return materia.date === dateChosen
+			  return materia.date2 === dateChosen
         });
-        displayNews(filteredNews);
+      displayNews(filteredNews);
+		
     }
     else {
         displayNews(allNews);
-    }
+	}
 };
 
 newsChannels.addEventListener('change', filter); 
@@ -60,8 +66,10 @@ function filter(){
   newsDiv.innerHTML='';
   let channel = newsChannels.value;  
   let filteringChannel = STEAM.appnews['newsitems'];  
-  for (let subjectMatter of filteringChannel){    
-    if(channel===subjectMatter.feedname){     
+  let agora = 1;
+  for (let subjectMatter of filteringChannel){ 
+    if(channel===subjectMatter.feedname){  
+      let isso=agora++;
       let title=subjectMatter.title
       let date= new Date((subjectMatter.date)*1000).toDateString()
       let contents=subjectMatter.contents
@@ -81,7 +89,6 @@ function print(title, date, contents){
     newsDiv.appendChild(result)
 }
 
-
 sortList.addEventListener("change", sortedByDate);
 
 function sortedByDate() {
@@ -95,3 +102,6 @@ function sortedByDate() {
 		displayNews(downward);
 	}
 };
+
+
+
