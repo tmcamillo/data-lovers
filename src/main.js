@@ -13,7 +13,6 @@ const totalOfNews= document.querySelector(".total-sum-news");
 const nomes = [...new Set(allNews.map(word => word.feedname))];
 const buttonHome=document.querySelector('.btn')
 
-
 let feedDropListDates = () => {
     for (date of uniqueDates){
         let option = document.createElement("option");
@@ -89,8 +88,10 @@ buttonHome.addEventListener('click', home)
 
 function home(){
   let channel = newsChannels.value; 
+  let dateChosen = parseInt(dropListDate.value);
   if(channel!=0 || dateChosen!=0 ){
-    channel=0    
+    channel=0
+    dateChosen=0
    sortList.disabled='';
    sortList.style.display='block';
   }
