@@ -10,6 +10,8 @@ const dropListDate = document.querySelector(".drop-list-date");
 const sortList = document.querySelector(".sort-list");
 const uniqueDates = [...new Set(allNews.map(word => word.date))];
 const totalOfNews= document.querySelector(".total-sum-news");
+const nomes = [...new Set(allNews.map(word => word.feedname))];
+const buttonHome=document.querySelector('.btn')
 
 
 let feedDropListDates = () => {
@@ -27,7 +29,6 @@ let formatDate = (date) => {
 	let fixed = `${newDate.getFullYear()}-${newDate.getMonth() + 1 }-${newDate.getDate()}+ ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds() < 10 ? '0' + newDate.getSeconds(): newDate.getSeconds()}`;
 	return fixed;
 };
-
 let displayNews = (filteredNews) => {
     newsDiv.innerHTML = `${filteredNews.map((materia) => `
     <div class="news-style"> 
@@ -45,28 +46,29 @@ dropListDate.addEventListener("change", loadByDate);
 
 function loadByDate() {
     let dateChosen = parseInt(dropListDate.value);
-    if (dateChosen){
-        let filteredNews = allNews.filter((materia) => {
-            return materia.date === dateChosen
-        });
-        displayNews(filteredNews);
-    }
-    else {
-        displayNews(allNews);
-    }
+    let filteredNews = allNews.filter((materia) => {
+      return materia.date === dateChosen
+    });
+      displayNews(filteredNews);
+      if(dateChosen!=0){
+        sortList.disabled='disabled';
+        sortList.style.display='none';
+      }   
 };
 
 newsChannels.addEventListener('change', filter); 
 
 function filter(){
   let channel = newsChannels.value; 
-  if(channel){
-    let filteredNews = allNews.filter((materia) => {
-      return materia.feedname === channel
+  let filtered = allNews.filter((materia) => {      
+    return materia.feedname === channel
   });
-    displayNews(filteredNews);
-  }  
-}
+    displayNews(filtered);
+    if(channel!=0){
+      sortList.disabled='disabled';
+      sortList.style.display='none';
+    }
+  } 
 
 sortList.addEventListener("change", sortedByDate);
 
@@ -83,3 +85,14 @@ function sortedByDate() {
 };
 
 
+buttonHome.addEventListener('click', home)
+
+function home(){
+  let channel = newsChannels.value; 
+  if(channel!=0 || dateChosen!=0 ){
+    channel=0    
+   sortList.disabled='';
+   sortList.style.display='block';
+  }
+  displayNews(allNews)  
+}
