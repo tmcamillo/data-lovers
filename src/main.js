@@ -30,6 +30,11 @@ let feedDropListDates = () => {
     }
 };
     
+let formatDate = (date) => {
+	let newDate = new Date(date*1000);
+	let fixed = `${newDate.getFullYear()}-${newDate.getMonth() + 1 }-${newDate.getDate()}+ ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds() < 10 ? '0' + newDate.getSeconds(): newDate.getSeconds()}`;
+	return fixed;
+};
 let displayNews = (filteredNews) => {
     newsDiv.innerHTML = `${filteredNews.map((materia) => `
     <div class="news-style"> 
