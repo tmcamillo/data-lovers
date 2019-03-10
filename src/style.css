@@ -19,7 +19,7 @@ header i {
     margin-top: 10px;
 }
 
-.banner{
+.banner {
     background-color: white;
     height: 10%;
 }
@@ -40,7 +40,7 @@ header i {
 }
 
 .news-style{
-    padding: 3% 10% 3% 10%;
+    padding: 0% 5% 1% 5%;
     color: #155592;
     line-height: 150%;
 }
