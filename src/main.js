@@ -1,6 +1,6 @@
 window.onload = function() {
   displayNews(allNews);
-// feedDropListDates();	
+	
 };
 
 let formatDate = (date) => {
@@ -11,31 +11,15 @@ return fixed;
 
 const originalObj = STEAM['appnews']['newsitems']; 
 let allNews =  originalObj.map(item => {  return {...item, date2: formatDate(item.date)}  })
-let uniqueDates = [...new Set(allNews.map(item => item.date2))];
 let uniqueChannels = [...new Set(allNews.map(item => item.feedname))];
 const newsDiv = document.querySelector('#news-container');  
 const totalOfNews = document.querySelector('.total-sum-news');
-const newsChannels = document.querySelector('#newsChannels');
+const dropListChannel = document.querySelector('.drop-list-channel');
 const dropListDate = document.querySelector('.drop-list-date');
 const sortList = document.querySelector('.sort-list');
-const buttonHome=document.querySelector('.btn');
-// let filteredNewsDate='';
+const buttonHome = document.querySelector('.btn-clear-filter');
 
-// let feedDropListDates = () => {
-//   for (let date of uniqueDates){
-//       let option = document.createElement('option');
-//       option.setAttribute('value', date);
-//       option.setAttribute('class', 'drop-option-date');
-//       option.textContent = date;
-//       dropListDate.appendChild(option);
-//   }
-// };
-  
-// let formatDate = (date) => {
-// let newDate = new Date(date*1000);
-// let fixed = `${newDate.getFullYear()}-${newDate.getMonth() + 1 }-${newDate.getDate()}+ ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds() < 10 ? '0' + newDate.getSeconds(): newDate.getSeconds()}`;
-// return fixed;
-// };
+
 let displayNews = (filteredNews) => {
   newsDiv.innerHTML = `${filteredNews.map((materia) => `
   <div class="news-style"> 
@@ -49,11 +33,26 @@ let displayNews = (filteredNews) => {
   totalOfNews.innerHTML = `<p>Foi encontrado um total de ${sumFilteredNews} notícias para seu filtro</p>`  
 }; 
 
+let populateDropListDates = (arr) => {
+	let filteredNewsDate = arr.filter((materia) => { return materia.date2 });
+  let uniqueDates = [...new Set(filteredNewsDate.map(item => item.date2))];
+  uniqueDates.unshift('Data');
+	dropListDate.innerHTML='';
+  
+	for (let date of uniqueDates){
+		let option = document.createElement('option');
+		option.setAttribute('value', date);
+		option.setAttribute('class', 'drop-option-date');
+		option.textContent = date;
+		dropListDate.add(option);
+	}   
+};
+
 dropListDate.addEventListener('change', loadByDate);
 
 function loadByDate() {
-let dateChosen = dropListDate.value;
-let filteredNews =filtrando().filter((materia) => { return materia.date2 === dateChosen; });
+  let dateChosen = dropListDate.value;
+  let filteredNews = loadByChannel().filter((materia) => { return materia.date2 === dateChosen; });
   displayNews(filteredNews);
   if(dateChosen != 0) {    
     sortList.disabled = 'disabled';
@@ -61,12 +60,14 @@ let filteredNews =filtrando().filter((materia) => { return materia.date2 === dat
   }   
 };
 
-newsChannels.addEventListener('change', filtrando); 
-function filtrando() {
-let channel = newsChannels.value; 
-let filtered = allNews.filter((materia) => { return materia.feedname === channel; });
-displayNews(filtered);
-populateDropListDates(filtered);
+dropListChannel.addEventListener('change', loadByChannel); 
+function loadByChannel() {
+  let channel = dropListChannel.value; 
+  let filtered = allNews.filter((materia) => { return materia.feedname === channel; });
+  
+  displayNews(filtered);
+  populateDropListDates(filtered);
+
   if(channel != 0) {    
     sortList.disabled = 'disabled';
     sortList.style.display = 'none';
@@ -74,6 +75,7 @@ populateDropListDates(filtered);
   return filtered;
 };
 
+<<<<<<< HEAD
 let populateDropListDates = (naosei) => {
   let filteredNewsDate = naosei.filter((materia) => { return materia.date2 });
   let uniqueDates = [...new Set(filteredNewsDate.map(item => item.date2))];
@@ -89,11 +91,13 @@ let populateDropListDates = (naosei) => {
       dropListDate.add(option);
   }   
 };
+=======
+>>>>>>> 791566b45ab97b63bde2f76a88476ffd8f44aa90
 
 buttonHome.addEventListener('click', home);
 function home() {
-let channel = newsChannels.value;
-let dateChosen = parseInt(dropListDate.value);
+let channel = dropListChannel.value;
+let dateChosen = dropListDate.value;
 if (channel != 0 || dateChosen != 0 ){
   channel = 0   
   dateChosen = 0

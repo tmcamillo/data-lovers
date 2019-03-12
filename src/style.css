@@ -29,9 +29,8 @@ header i {
 }
 
 .drop-list {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 3%;
+    display: inline-grid;
+    margin-top: 3%;
 }
 
 .news-box {
@@ -57,4 +56,12 @@ header i {
 
 .news-style hr{
     color: #d41010;
+}
+
+footer {
+    background-color: #155592; 
+    height: 78px;
+    color: white;
+    text-align: center;
+    font-size: small;
 }
