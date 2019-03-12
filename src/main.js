@@ -50,13 +50,14 @@ let displayNews = (filteredNews) => {
 }; 
 
 dropListDate.addEventListener('change', loadByDate);
+
 function loadByDate() {
 let dateChosen = dropListDate.value;
 let filteredNews =filtrando().filter((materia) => { return materia.date2 === dateChosen; });
   displayNews(filteredNews);
   if(dateChosen != 0) {    
     sortList.disabled = 'disabled';
-    sortList.style.display = 'none';
+    sortList.style.display = 'none';   
   }   
 };
 
@@ -76,6 +77,8 @@ populateDropListDates(filtered);
 let populateDropListDates = (naosei) => {
   let filteredNewsDate = naosei.filter((materia) => { return materia.date2 });
   let uniqueDates = [...new Set(filteredNewsDate.map(item => item.date2))];
+  uniqueDates.unshift('Data')
+  console.log(uniqueDates)
   dropListDate.innerHTML='';
 
   for (let date of uniqueDates){
