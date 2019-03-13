@@ -12,7 +12,7 @@
 
 ## Resumo do Projeto
 
-Neste projeto desenvolvemos uma página web à partir da manipulação de objetos de dados do tema Steam Notícias. O layout acompanhou a identidade visual da plataforma de jogo Steam e trabalhamos com HTML, CSS e Vanilla Javascript.
+Neste projeto desenvolvemos uma página web à partir da manipulação de objetos de dados do tema Steam Notícias. Utilizamos HTML, CSS e Vanilla Javascript no desenvolvimento. O layout acompanhou a identidade visual da plataforma de jogo.
 
 As funcionalidades implementadas permitem ao usuário: 
 * Visualizar em lista todas as notícias da base;
@@ -21,14 +21,15 @@ As funcionalidades implementadas permitem ao usuário:
 * Visualizar o total de notícia a cada interação e,
 * Visualizar a porcentagem de notícias publicadas por Canal. 
 
+
 ## Usuário e Interface
 
 #### Persona
-Fizemos a definição das personas, e identificamos que de forma geral os usuários da Steam entram na plataforma com o objetivo de adquirir jogos que já conhecem e, desejando se atualizar das novidades do mercado de forma rápida, na mesma página, com filtros datados e canal de interesse.
+Fizemos a definição das personas, e identificamos que de forma geral os usuários da Steam entram na plataforma com o objetivo de adquirir jogos que já conhecem e, buscando novidades e atualizações dos jogos no mercado de forma rápida, com filtros datados e canais outros de interesse.
 
-![alt text](https://uploaddeimagens.com.br/imagens/persona1_prancheta_1_copia_2-png)
+![alt text](Persona1.jpg)
 
-![alt text](https://uploaddeimagens.com.br/imagens/persona1_prancheta_1_copia_2-png)
+![alt text](Persona2.jpg)
 
 #### Protótipo
 Elaboramos esboços de baixa fidelidade diretamente no [Marvel](https://marvelapp.com/) para uma primeira versão do protótipo. Confira  [aqui](https://marvelapp.com/4fa1ag4/screen/53823466).
