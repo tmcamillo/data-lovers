@@ -25,6 +25,7 @@ let displayNews = (filteredNews) => {
       <h2 class="news-style">${materia['title']} </h2>
       <h3 class="news-style">${formatDate(materia['date'])} </h3>
       <p class="news-style"> ${materia['contents']} </p>
+      <a href='${materia.url}' target='blank'><p class="news-style"> Confira na íntegra.</p></a>
 </div>
 `).join('')}
 `

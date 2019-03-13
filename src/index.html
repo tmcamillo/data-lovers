@@ -9,60 +9,60 @@
 		
 	</head>
   <body>
-    <header>
-		<div class="logo-container">
-			<i class="fab fa-steam"></i>
-		</div>
-		<nav>
-			<button class="btn-clear-filter">Home</button>
-		</nav> 		
-    </header>    
-    <main >      
-		  <section class="banner"> 
-      </section>
-		  <div class="wrap">
-			  <section id="main-menu" class="drop-list">	
-
-				  <select id="news-channel" class="drop-list-channel" >
+    <header>    
+		  <div id="initial" class="logo-container"> 			  
+        <img src="img/steamlogo.jpg" class="logoSteam">
+		  </div>
+      <div class="droplistOne">
+        <nav>
+          <button id="clean" class="btn-clear-filter">LIMPAR FILTRO</button>
+          <a href="#graphic"><button class="btn-clear-filter" >GRÁFICO</button></a>
+          <section id="main-menu" class="drop-list">	
+        </nav>
+      </div>
+      <div class="selections">
+        <section>
+          <select id="news-channel" class="drop-list-channel" >
             <option value="" disabled selected>CANAIS DE NOTICIAS</option>
             <option value="steam_updates">STEAM</option>
             <option value="tf2_blog">TF2 BLOG</option>
-            <option value="pcgamer">PC GAMER</option>              
+            <option value="pcgamer">PC GAMER</option>      
             <option value="eurogamer">EUROGAMER</option>
             <option value="rps">RPS</option> 
-					</select>	
-						
+          </select>							
           <select class="drop-list-date">
-            <option value="" disabled selected>DATA ESPECÍFICA</option>
-          </select>
-				                       
-      		<p id="answer"></p>	
-			</section>
-					  
-			<article class="news-box">
-				
-				<div>
-					<div class="total-sum-news"></div>
-					<select class="sort-list">
-						<option value="" >ORDENAR</option>
-							<option value="oldest">MAIS ANTIGAS</option>
-							<option value="latest">MAIS RECENTES</option>
-					</select>
-				</div>
-				
-				<div id="news-container" class="news-style"></div>
-			</article>
-
-			<article>
-				<div id="piechart-3d" style="width: 900px; height: 500px;"></div>
-			</article>
-			
-		</div>
-	</main>  
-	<footer>
-		<p> © 2019 Valve Corporation. Todos os direitos reservados. Todas as marcas são propriedade dos seus respectivos donos nos EUA e em outros países.</p>
-	</footer>
-	
+            <option value="" disabled selected>DATA </option>
+          </select>      		
+        </section>	 
+      </div>
+      <div class="banner">
+        <img src="img/tflogo.png" class="imageOne" >
+      </div>    	
+    </header>    
+    <main >
+      <div class="toSeparate"></div>	  
+		  <div class="wrap">			 
+        <article class="news-box">          			
+          <div class="total-sum-news"></div>           
+          <div class="sortDroplist">
+            <select class="sort-list">
+              <option value="" >ORDENAR</option>
+              <option value="oldest">MAIS ANTIGAS</option>
+              <option value="latest">MAIS RECENTES</option>
+            </select>
+				  </div>				
+			  	<div id="news-container" class="news-style"></div>
+			  </article>
+        <div class="separateTwo"></div>
+			  <article  id="graphic" class="chart">
+          <a href="#initial"><button id="initial" class="btn-clear-filter" >INÍCIO</button></a>
+				  <div id="piechart-3d" style="width: 900px; height: 500px;"></div>
+			  </article>			
+		  </div>
+	  </main>  
+  	<footer>
+		 <p> © 2019 Valve Corporation. Todos os direitos reservados. Todas as marcas são propriedade dos seus respectivos donos nos EUA e em outros países.</p>
+	  </footer>	
     <script type="text/javascript" src="./data/steam/steam.js"></script>   
     <script type="text/javascript" src="main.js"></script>
   </body>

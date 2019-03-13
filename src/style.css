@@ -1,67 +1,113 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f6f6f6;
-    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;    
+    margin: 0;
+    background-image: url(img/TF2_bannerdp.png);
+    background-attachment: fixed;
+    background-size: 100vw;
+    /* overflow-x: hidden;        */
 }
-
-header {
-    background-color: #155592; 
-    height: 78px;
+header{  
+  display: grid;
+  grid-template-columns: 25vw 25vw 25vw auto;
+  background-color: #1F3244; 
+  height: 8vw;
+  align-items: center;  
 }
-
+.droplistOne{
+  display: grid;
+  justify-items: end;
+  padding: 1vw;
+  align-items: center;  
+}
+.selections{
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  height: 8vw;  
+}
 .logo-container{
-    text-align: center;
+  display: grid;  
+  justify-items: center;
 }
-
-header i {
-    color: white;
-    font-size: 300%;
-    margin-top: 10px;
+.logoSteam{
+  height: 5vw;
 }
-
-.banner {
-    background-color: white;
-    height: 10%;
+.banner{
+  display: grid;
+  justify-items: center;
+}
+.imageOne{
+  width: 20vw;
+  height: 5vw;
+}
+.btn-clear-filter{  
+  width: 10vw;
+  background-color: white;
+}
+.btn-clear-filter, .drop-list-channel, .drop-list-date, .sort-list{
+  height: 2vw;
+}
+.drop-list-date{
+  width: 10vw;
+}
+#clean{
+  font-size: 12px;
+}
+.toSeparate{
+  height: 5vw;
+}
+main{  
+  display: grid;
+  justify-items: center;  
+}
+.sortDroplist{
+  display: grid;
+  justify-items: end;
+  width: 65vw;
 }
 .wrap {
-    width: 960px;
-    margin: auto;
+  display: grid;
+  justify-content: center;
 }
 
-.drop-list {
-    display: inline-grid;
-    margin-top: 3%;
+.news-box, .chart{
+  background-color: white;
+  height: auto;
+  width: 70VW;
+  border: #1F3244 5px solid;
 }
-
-.news-box {
-    background-color: white;
-    height: auto;
-}
-
 .news-style{
-    padding: 0% 5% 1% 5%;
-    color: #155592;
-    line-height: 150%;
+  padding: 0% 5% 1% 5%;
+  color: #155592;
+  line-height: 150%;
 }
-
+.total-sum-news{
+  text-align: center;
+}
 .news-style h2{
-    margin-bottom: 0%;
+  margin-bottom: 0%;
 }
-
 .news-style h3{
-    margin-top: 0%;
-    font-style: italic;
-    font-size: 1rem;
+  margin-top: 0%;
+  font-style: italic;
+  font-size: 1rem;
 }
-
 .news-style hr{
-    color: #d41010;
+  color: #d41010;
+}
+.separateTwo{
+  height: 2vw;
 }
 
+#initial{
+  background-color: #1F3244;
+  color: white;
+  /* font-size: 2px; */
+}
 footer {
-    background-color: #155592; 
-    height: 78px;
-    color: white;
-    text-align: center;
-    font-size: small;
+  background-color: #1F3244; 
+  height: 78px;
+  color: white;
+  text-align: center;
+  font-size: small;
 }
