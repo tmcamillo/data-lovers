@@ -26,6 +26,7 @@ let displayNews = (filteredNews) => {
       <h2 class="news-style">${materia['title']} </h2>
       <h3 class="news-style">${formatDate(materia['date'])} </h3>
       <p class="news-style"> ${materia['contents']} </p>
+      <a href='${materia.url}' target='blank'><p class="news-style"> Confira na íntegra.</p></a>
 </div>
 `).join('')}
 `
@@ -49,14 +50,13 @@ let populateDropListDates = (arr) => {
 };
 
 dropListDate.addEventListener('change', loadByDate);
-
 function loadByDate() {
   let dateChosen = dropListDate.value;
   let filteredNews = loadByChannel().filter((materia) => { return materia.date2 === dateChosen; });
   displayNews(filteredNews);
   if(dateChosen != 0) {    
     sortList.disabled = 'disabled';
-    sortList.style.display = 'none';   
+    sortList.style.display = 'none';
   }   
 };
 
@@ -75,24 +75,6 @@ function loadByChannel() {
   return filtered;
 };
 
-<<<<<<< HEAD
-let populateDropListDates = (naosei) => {
-  let filteredNewsDate = naosei.filter((materia) => { return materia.date2 });
-  let uniqueDates = [...new Set(filteredNewsDate.map(item => item.date2))];
-  uniqueDates.unshift('Data')
-  console.log(uniqueDates)
-  dropListDate.innerHTML='';
-
-  for (let date of uniqueDates){
-      let option = document.createElement('option');
-      option.setAttribute('value', date);
-      option.setAttribute('class', 'drop-option-date');
-      option.textContent = date;
-      dropListDate.add(option);
-  }   
-};
-=======
->>>>>>> 791566b45ab97b63bde2f76a88476ffd8f44aa90
 
 buttonHome.addEventListener('click', home);
 function home() {
