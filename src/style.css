@@ -1,11 +1,11 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;    
-    margin: 0;
-    background-image: url(img/TF2_bannerdp.png);
-    background-attachment: fixed;
-    background-size: 100vw;
-    /* overflow-x: hidden;        */
+  font-family: Arial, Helvetica, sans-serif;    
+  margin: 0;
+  background-image: url(img/TF2_bannerdp.png);
+  background-attachment: fixed;
+  background-size: 100vw;
 }
+
 header{  
   display: grid;
   grid-template-columns: 25vw 25vw 25vw auto;
@@ -13,58 +13,72 @@ header{
   height: 8vw;
   align-items: center;  
 }
+
 .droplistOne{
   display: grid;
   justify-items: end;
   padding: 1vw;
   align-items: center;  
 }
+
 .selections{
   display: grid;
   justify-items: start;
   align-items: center;
   height: 8vw;  
 }
+
 .logo-container{
   display: grid;  
   justify-items: center;
 }
+
 .logoSteam{
   height: 5vw;
 }
+
 .banner{
   display: grid;
   justify-items: center;
 }
+
 .imageOne{
   width: 20vw;
   height: 5vw;
 }
+
 .btn-clear-filter{  
   width: 10vw;
   background-color: white;
 }
+
 .btn-clear-filter, .drop-list-channel, .drop-list-date, .sort-list{
   height: 2vw;
 }
+
 .drop-list-date{
   width: 10vw;
 }
+
 #clean{
   font-size: 12px;
 }
+
 .toSeparate{
   height: 5vw;
 }
+
 main{  
   display: grid;
   justify-items: center;  
 }
+
 .sortDroplist{
   display: grid;
   justify-items: end;
   width: 65vw;
 }
+
 .wrap {
   display: grid;
   justify-content: center;
@@ -81,20 +95,27 @@ main{
   color: #155592;
   line-height: 150%;
 }
+
 .total-sum-news{
   text-align: center;
+  color: #155592;
+  font-style: italic;
 }
+
 .news-style h2{
   margin-bottom: 0%;
 }
+
 .news-style h3{
   margin-top: 0%;
   font-style: italic;
   font-size: 1rem;
 }
+
 .news-style hr{
   color: #d41010;
 }
+
 .separateTwo{
   height: 2vw;
 }
@@ -102,12 +123,17 @@ main{
 #initial{
   background-color: #1F3244;
   color: white;
-  /* font-size: 2px; */
 }
+
 footer {
   background-color: #1F3244; 
   height: 78px;
   color: white;
   text-align: center;
   font-size: small;
+  
+}
+
+footer p {
+  padding: 2%;
 }

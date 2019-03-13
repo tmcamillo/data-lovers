@@ -18,7 +18,6 @@ const dropListDate = document.querySelector('.drop-list-date');
 const sortList = document.querySelector('.sort-list');
 const buttonHome = document.querySelector('.btn-clear-filter');
 
-
 let displayNews = (filteredNews) => {
   newsDiv.innerHTML = `${filteredNews.map((materia) => `
   <div class="news-style"> 
@@ -30,13 +29,13 @@ let displayNews = (filteredNews) => {
 `).join('')}
 `
   let sumFilteredNews = Object.keys(filteredNews).length;
-  totalOfNews.innerHTML = `<p>Foi encontrado um total de ${sumFilteredNews} notícias para seu filtro</p>`  
+  totalOfNews.innerHTML = `<p>Foram localizadas ${sumFilteredNews} notícias</p>`  
 }; 
 
 let populateDropListDates = (arr) => {
 	let filteredNewsDate = arr.filter((materia) => { return materia.date2 });
-  let uniqueDates = [...new Set(filteredNewsDate.map(item => item.date2))];
-  uniqueDates.unshift('Data');
+  	let uniqueDates = [...new Set(filteredNewsDate.map(item => item.date2))];
+  	uniqueDates.unshift('Data');
 	dropListDate.innerHTML='';
   
 	for (let date of uniqueDates){
@@ -50,10 +49,10 @@ let populateDropListDates = (arr) => {
 
 dropListDate.addEventListener('change', loadByDate);
 function loadByDate() {
-  let dateChosen = dropListDate.value;
-  let filteredNews = loadByChannel().filter((materia) => { return materia.date2 === dateChosen; });
-  displayNews(filteredNews);
-  if(dateChosen != 0) {    
+	let dateChosen = dropListDate.value;
+	let filteredNews = loadByChannel().filter((materia) => { return materia.date2 === dateChosen; });
+	displayNews(filteredNews);
+	if(dateChosen != 0) {    
     sortList.disabled = 'disabled';
     sortList.style.display = 'none';
   }   
@@ -74,7 +73,6 @@ function loadByChannel() {
   return filtered;
 };
 
-
 buttonHome.addEventListener('click', home);
 function home() {
 let channel = dropListChannel.value;
@@ -90,15 +88,15 @@ displayNews(allNews);
 
 sortList.addEventListener('change', sortedByDate);
 function sortedByDate() {
-let sortChosen = sortList.value;
-if (sortChosen === 'oldest') {
-  let upward = allNews.sort((a,b) => new Date(a.date) - new Date(b.date));
-  displayNews(upward);
-}
-else if (sortChosen === 'latest') {
-  let downward = allNews.sort((a,b) => new Date(b.date) - new Date(a.date));
-  displayNews(downward);
-}
+	let sortChosen = sortList.value;
+	if (sortChosen === 'oldest') {
+		let upward = allNews.sort((a,b) => new Date(a.date) - new Date(b.date));
+		displayNews(upward);
+	}
+	else if (sortChosen === 'latest') {
+		let downward = allNews.sort((a,b) => new Date(b.date) - new Date(a.date));
+		displayNews(downward);
+	}
 };
 
 let countOfOcurrency = allNews.reduce(function(sums,entry){ sums[entry.feedname] = (sums[entry.feedname] || 0) + 1;
@@ -116,13 +114,16 @@ arr.push([channelKey[index].toUpperCase(),channelValue[index]])
 google.charts.load("current", {packages:["corechart"]});
 google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
-var data = google.visualization.arrayToDataTable(arr)
-var options = {
-  title: 'Notícia por Canais',
-  is3D: true,
-  backgroundColor: 'transparent'
-};
-var chart = new google.visualization.PieChart(document.getElementById('piechart-3d'));
-chart.draw(data, options);
+	let data = google.visualization.arrayToDataTable(arr)
+	let options = {
+		title: 'Porcentagem de notícia por Canal',
+		is3D: true,
+		colors:['#F1D1A2','#58130F', '#983B53', '#D88E4B','#03113D'],
+		legend: {position: 'left', textStyle: {color: '#155592', fontSize: 14}},
+		titleTextStyle: {color: '#155592', fontSize: 20},
+		backgroundColor: 'transparent',
+	};
+	let chart = new google.visualization.PieChart(document.getElementById('piechart-3d'));
+	chart.draw(data, options);
 };
 
