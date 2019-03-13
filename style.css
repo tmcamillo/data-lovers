@@ -1,7 +1,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;    
   margin: 0;
-  background-image: url(img/TF2_bannerdp.png);
+  background-image: url(/src/img/TF2_bannerdp.png);
   background-attachment: fixed;
   background-size: 100vw;
 }
