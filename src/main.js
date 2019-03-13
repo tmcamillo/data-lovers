@@ -1,6 +1,5 @@
 window.onload = function() {
   displayNews(allNews);
-	
 };
 
 let formatDate = (date) => {
