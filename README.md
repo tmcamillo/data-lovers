@@ -25,11 +25,10 @@ As funcionalidades implementadas permitem ao usuário:
 ## Usuário e Interface
 
 #### Persona
-Fizemos a definição das personas, e identificamos que de forma geral os usuários da Steam entram na plataforma com o objetivo de adquirir jogos que já conhecem e, buscando novidades e atualizações dos jogos no mercado de forma rápida, com filtros datados e canais outros de interesse.
+Fizemos a definição das personas, e identificamos que de forma geral os usuários da Steam entram na plataforma com o objetivo de adquirir jogos que já conhecem e, buscando novidades e atualizações dos jogos no mercado de forma rápida, com filtros datados e canais outros de interesse
 
-![alt text](Persona1.jpg)
+![alt text](Personas.jpg)
 
-![alt text](Persona2.jpg)
 
 #### Protótipo
 Elaboramos esboços de baixa fidelidade diretamente no [Marvel](https://marvelapp.com/) para uma primeira versão do protótipo. Confira  [aqui](https://marvelapp.com/4fa1ag4/screen/53823466).
