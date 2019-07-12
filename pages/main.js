@@ -3,9 +3,9 @@ window.onload = function() {
 };
 
 let formatDate = (date) => {
-let newDate = new Date(date*1000);
-let fixed = `${newDate.getDate()}-${newDate.getMonth() + 1 }-${newDate.getFullYear()}`;
-return fixed;
+	let newDate = new Date(date*1000);
+	let fixed = `${newDate.getDate()}-${newDate.getMonth() + 1 }-${newDate.getFullYear()}`;
+	return fixed;
 };
 
 const originalObj = STEAM['appnews']['newsitems']; 
@@ -34,8 +34,8 @@ let displayNews = (filteredNews) => {
 
 let populateDropListDates = (arr) => {
 	let filteredNewsDate = arr.filter((materia) => { return materia.date2 });
-  	let uniqueDates = [...new Set(filteredNewsDate.map(item => item.date2))];
-  	uniqueDates.unshift('Data');
+  let uniqueDates = [...new Set(filteredNewsDate.map(item => item.date2))];
+  uniqueDates.unshift('Data');
 	dropListDate.innerHTML='';
   
 	for (let date of uniqueDates){
@@ -75,15 +75,15 @@ function loadByChannel() {
 
 buttonHome.addEventListener('click', home);
 function home() {
-let channel = dropListChannel.value;
-let dateChosen = dropListDate.value;
-if (channel != 0 || dateChosen != 0 ){
-  channel = 0   
-  dateChosen = 0
-  sortList.disabled = '';
-  sortList.style.display = 'block';
-}
-displayNews(allNews); 
+	let channel = dropListChannel.value;
+	let dateChosen = dropListDate.value;
+	if (channel != 0 || dateChosen != 0 ){
+		channel = 0   
+		dateChosen = 0
+		sortList.disabled = '';
+		sortList.style.display = 'block';
+	}
+	displayNews(allNews); 
 };
 
 sortList.addEventListener('change', sortedByDate);
@@ -99,16 +99,21 @@ function sortedByDate() {
 	}
 };
 
-let countOfOcurrency = allNews.reduce(function(sums,entry){ sums[entry.feedname] = (sums[entry.feedname] || 0) + 1;
-return sums;
+let countOfOcurrency = allNews.reduce(function(sums,entry){ 
+	sums[entry.feedname] = (sums[entry.feedname] || 0) + 1;
+	console.log(sums, 'sum');
+	console.log(entry.feedname, 'entry e feedname');
+
+	return sums;
 },{});
+
 
 let channelKey = Object.keys(countOfOcurrency);
 let channelValue = Object.values(countOfOcurrency);
 let arr = [['título', 'quantidade']];
 
 for (let index in channelKey){
-arr.push([channelKey[index].toUpperCase(),channelValue[index]])
+	arr.push([channelKey[index].toUpperCase(),channelValue[index]])
 }
 
 google.charts.load("current", {packages:["corechart"]});

@@ -1,79 +1,79 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;    
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background-image: url(src/img/TF2_bannerdp.png);
+  background-image: url(../img/TF2_bannerdp.png);
   background-attachment: fixed;
   background-size: 100vw;
 }
 
-header{  
+.header-style {
   display: grid;
   grid-template-columns: 25vw 25vw 25vw auto;
-  background-color: #1F3244; 
+  background-color: #1f3244;
   height: 8vw;
-  align-items: center;  
+  align-items: center;
 }
 
-.droplistOne{
+.droplistOne {
   display: grid;
   justify-items: end;
   padding: 1vw;
-  align-items: center;  
+  align-items: center;
 }
 
-.selections{
+.selections {
   display: grid;
   justify-items: start;
   align-items: center;
-  height: 8vw;  
+  height: 8vw;
 }
 
-.logo-container{
-  display: grid;  
-  justify-items: center;
-}
-
-.logoSteam{
-  height: 5vw;
-}
-
-.banner{
+.logo-container {
   display: grid;
   justify-items: center;
 }
 
-.imageOne{
+.logoSteam {
+  height: 5vw;
+}
+
+.banner {
+  display: grid;
+  justify-items: center;
+}
+
+.imageOne {
   width: 20vw;
   height: 5vw;
 }
 
-.btn-clear-filter{  
+.btn-clear-filter {
   width: 10vw;
   background-color: white;
-}
-
-.btn-clear-filter, .drop-list-channel, .drop-list-date, .sort-list{
-  height: 2vw;
-}
-
-.drop-list-date{
-  width: 10vw;
-}
-
-#clean{
   font-size: 12px;
 }
 
-.toSeparate{
+.btn-clear-filter,
+.drop-list-channel,
+.drop-list-date,
+.sort-list {
+  height: 2vw;
+}
+
+.drop-list-date {
+  width: 10vw;
+}
+
+.toSeparate {
   height: 5vw;
 }
 
-main{  
+.main-style {
   display: grid;
-  justify-items: center;  
+  justify-items: center;
 }
 
-.sortDroplist{
+.sortDroplist {
   display: grid;
   justify-items: end;
   width: 65vw;
@@ -84,56 +84,56 @@ main{
   justify-content: center;
 }
 
-.news-box, .chart{
+.news-box,
+.chart {
   background-color: white;
   height: auto;
-  width: 70VW;
-  border: #1F3244 5px solid;
+  width: 70vw;
+  border: #1f3244 5px solid;
 }
-.news-style{
+.news-style {
   padding: 0% 5% 1% 5%;
   color: #155592;
   line-height: 150%;
 }
 
-.total-sum-news{
+.total-sum-news {
   text-align: center;
   color: #155592;
   font-style: italic;
 }
 
-.news-style h2{
+.news-style h2 {
   margin-bottom: 0%;
 }
 
-.news-style h3{
+.news-style h3 {
   margin-top: 0%;
   font-style: italic;
   font-size: 1rem;
 }
 
-.news-style hr{
+.news-style hr {
   color: #d41010;
 }
 
-.separateTwo{
+.separateTwo {
   height: 2vw;
 }
 
-#initial{
-  background-color: #1F3244;
+#initial {
+  background-color: #1f3244;
   color: white;
 }
 
-footer {
-  background-color: #1F3244; 
+.footer-style {
+  background-color: #1f3244;
   height: 78px;
   color: white;
   text-align: center;
   font-size: small;
-  
 }
 
-footer p {
+.padding-p {
   padding: 2%;
 }
