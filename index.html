@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <title>Data Lovers</title>
     <link rel="stylesheet" href="./pages/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Serif+Text|Fjalla+One&display=swap"
+      rel="stylesheet"
+    />
     <script
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
@@ -12,10 +16,10 @@
   <body>
     <header class="header-style">
       <div id="initial" class="logo-container">
-        <img src="img/steamlogo.jpg" class="logoSteam" />
+        <img src="img/steamlogo.jpg" class="steam-brand" />
       </div>
 
-      <div class="droplistOne">
+      <div class="drop-list-one">
         <nav>
           <button id="clean" class="btn-clear-filter">LIMPAR FILTRO</button>
           <a href="#graphic"
@@ -42,17 +46,17 @@
       </div>
 
       <div class="banner">
-        <img src="img/tflogo.png" class="imageOne" />
+        <img src="img/tflogo.png" class="first-img" />
       </div>
     </header>
 
     <main class="main-style">
-      <div class="toSeparate"></div>
+      <div class="separate-first"></div>
       <div class="wrap">
         <article class="news-box">
           <div class="total-sum-news"></div>
 
-          <div class="sortDroplist">
+          <div class="sort-drop-list">
             <select class="sort-list">
               <option value="">ORDENAR</option>
               <option value="oldest">MAIS ANTIGAS</option>
@@ -60,13 +64,15 @@
             </select>
           </div>
 
-          <div id="news-container" class="news-style"></div>
+          <div id="news-container" class="news-style-container"></div>
         </article>
 
-        <div class="separateTwo"></div>
+        <div class="separate-sec"></div>
         <article id="graphic" class="chart">
           <a href="#initial"
-            ><button id="initial" class="btn-clear-filter">INÍCIO</button></a
+            ><button id="initial" class="btn-clear-filter back-top">
+              INÍCIO
+            </button></a
           >
           <div id="piechart-3d" style="width: 900px; height: 500px;"></div>
         </article>

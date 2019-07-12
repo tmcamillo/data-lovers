@@ -14,7 +14,7 @@ body {
   align-items: center;
 }
 
-.droplistOne {
+.drop-list-one {
   display: grid;
   justify-items: end;
   padding: 1vw;
@@ -33,7 +33,7 @@ body {
   justify-items: center;
 }
 
-.logoSteam {
+.steam-brand {
   height: 5vw;
 }
 
@@ -42,7 +42,7 @@ body {
   justify-items: center;
 }
 
-.imageOne {
+.first-img {
   width: 20vw;
   height: 5vw;
 }
@@ -64,7 +64,7 @@ body {
   width: 10vw;
 }
 
-.toSeparate {
+.separate-first {
   height: 5vw;
 }
 
@@ -73,7 +73,7 @@ body {
   justify-items: center;
 }
 
-.sortDroplist {
+.sort-drop-list {
   display: grid;
   justify-items: end;
   width: 65vw;
@@ -91,10 +91,26 @@ body {
   width: 70vw;
   border: #1f3244 5px solid;
 }
+
+.news-style-container {
+  padding: 0% 0% 1% 0%;
+}
+
 .news-style {
   padding: 0% 5% 1% 5%;
   color: #155592;
-  line-height: 150%;
+  line-height: 140%;
+}
+
+.title-style {
+  font-family: "Fjalla One", sans-serif;
+}
+
+.time-style {
+  padding: 0% 5% 1% 5%;
+  font-size: 0.3rem;
+  font-style: italic;
+  color: grey;
 }
 
 .total-sum-news {
@@ -117,11 +133,11 @@ body {
   color: #d41010;
 }
 
-.separateTwo {
+.separate-sec {
   height: 2vw;
 }
 
-#initial {
+.back-top {
   background-color: #1f3244;
   color: white;
 }
