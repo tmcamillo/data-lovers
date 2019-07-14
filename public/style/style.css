@@ -7,6 +7,7 @@ body {
 }
 
 .header-style {
+  position: fixed;
   display: grid;
   grid-template-columns: 25vw 50vw 25vw;
   background-color: #1f3244;
@@ -97,7 +98,7 @@ select,
   width: 70vw;
   border: #1f3244 1px solid;
   border-radius: 10px;
-  margin-top: 7%;
+  margin-top: 13vw;
 }
 
 .news-style-container {
