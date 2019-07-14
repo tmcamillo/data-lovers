@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style/style.css" />
   <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text|Fjalla+One&display=swap" rel="stylesheet" />
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://kit.fontawesome.com/23ecf193dc.js"></script>
 </head>
 
 <body>
@@ -17,59 +18,61 @@
 
     <div class="drop-list-one">
       <nav>
-        <button id="clean" class="btn-clear-filter">LIMPAR FILTRO</button>
-        <a href="#graphic"><button class="btn-clear-filter">GRÁFICO</button></a>
+        <div class="selections select-style">
+          <select id="drop-lists-first" class="drop-list-channel">
+            <option value="" selected>CANAIS</option>
+          </select>
+          <select id="drop-lists-sec" class="drop-list-date" disabled>
+            <option value="" selected>DATA</option>
+          </select>
+          <button id="clear" class="btn-header-filter"><i class="fas fa-eraser"></i> Limpar Filtros</button>
+
+          <a href="#graphic"><button class="btn-header-filter"><i class="fas fa-chart-pie"></i> Ver gráfico</button></a>
+        </div>
       </nav>
     </div>
-
-    <div class="selections">
-      <section>
-        <select class="drop-list-channel">
-          <option value="" selected>CANAIS</option>
-        </select>
-
-        <select class="drop-list-date" disabled>
-          <option value="" selected>DATA</option>
-        </select>
-      </section>
-    </div>
-
     <div class="banner">
       <img src="img/tflogo.png" class="first-img" />
     </div>
   </header>
 
   <main class="main-style">
-    <div class="separate-first"></div>
-    <div class="wrap">
-      <article class="news-box">
-        <div class="total-sum-news"></div>
 
-        <div class="sort-drop-list">
-          <select class="sort-list">
-            <option value="">ORDENAR</option>
-            <option value="oldest">MAIS ANTIGAS</option>
-            <option value="latest">MAIS RECENTES</option>
-          </select>
+    <div>
+      <article class="news-box">
+        <div class="result">
+          <div class="total-sum-news"></div>
+          <div class="sort-drop-list">
+            <select class="sort-list">
+              <option value="">ORDENAR</option>
+              <option value="oldest">MAIS ANTIGAS</option>
+              <option value="latest">MAIS RECENTES</option>
+            </select>
+          </div>
         </div>
+
 
         <div id="news-container" class="news-style-container"></div>
       </article>
 
-      <div class="separate-sec"></div>
-      <article id="graphic" class="chart">
-        <a href="#initial"><button id="initial" class="btn-clear-filter back-top">
-            INÍCIO
-          </button></a>
-        <div id="piechart-3d" style="width: 900px; height: 500px;"></div>
+
+      <article id="graphic">
+        <div id="piechart-3d" style="width: 70vw; height: auto" ; class="chart">
+        </div>
+        <div>
+          <a href="#initial"><button id="initial" class="btn-chart"><i class="fas fa-arrow-alt-to-top"></i> Voltar ao
+              Topo</button></a>
+        </div>
+
       </article>
-    </div>
+
+
+
   </main>
 
   <footer class="footer-style">
     <p class="padding-p">
-      © 2019 Todos os direitos reservados. Todas as marcas são propriedade dos
-      seus respectivos donos no Brasil e em outros países.
+      ©2019 TMC at Lab
     </p>
   </footer>
 
